@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Share Your Travels - Photo Upload</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="cisc3003-practice04.css">
+</head>
+<body>
+<header>
+    <h1>Share Your Travels</h1>
+    <p>let us know where you've been</p>
+</header>
+
+<main>
+    <form action="process.php" method="post">
+        <fieldset>
+            <legend>Photo Details</legend>
+            
+            <!-- Title Section -->
+            <div class="form-field-vertical">
+                <label for="title" class="field-label">Title:</label>
+                <input type="text" id="title" name="title" 
+                       placeholder="Give your photo a descriptive name" class="field-input">
+            </div>
+            
+            <!-- Description Section -->
+            <div class="form-field-vertical">
+                <label for="description" class="field-label">Description:</label>
+                <textarea id="description" name="description" 
+                          rows="5" placeholder="Adding a rich description will help with search results" 
+                          class="field-textarea"></textarea>
+            </div>
+            
+            <!-- Location & Copyright Section -->
+            <div class="two-columns-container">
+                <!-- Left Column: Location -->
+                <div class="left-column">
+                    <div class="form-field-vertical">
+                        <label for="continent" class="field-label">Continent:</label>
+                        <select id="continent" name="continent" class="field-input">
+                            <option value="">Choose continent</option>
+                            <option value="africa">Africa</option>
+                            <option value="asia">Asia</option>
+                            <option value="europe">Europe</option>
+                            <option value="north-america">North America</option>
+                            <option value="south-america">South America</option>
+                        </select>
+                    </div>
+                    <div class="form-field-vertical">
+                        <label for="country" class="field-label">Country:</label>
+                        <select id="country" name="country" class="field-input">
+                            <option value="">Choose country</option>
+                            <option value="canada">Canada</option>
+                            <option value="mexico">Mexico</option>
+                            <option value="usa">United States</option>
+                        </select>
+                    </div>
+                    <div class="form-field-vertical">
+                        <label for="city" class="field-label">City:</label>
+                        <select id="city" name="city" class="field-input">
+                            <option value="">Choose city</option>
+                            <option value="calgary">Calgary</option>
+                            <option value="montreal">Montreal</option>
+                            <option value="toronto">Toronto</option>
+                            <option value="vancouver">Vancouver</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Copyright & CC Types -->
+                <div class="right-column">
+                    <!-- Copyright Box -->
+                    <div class="section-box">
+                        <div class="box-label">Copyright?</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="copyright" value="all-rights"> All rights reserved
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="copyright" value="cc"> Creative Commons
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Creative Commons Types Box -->
+                    <div class="section-box">
+                        <div class="box-label">Creative Commons Types</div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="cc-types[]" value="attribution"> Attribution
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="cc-types[]" value="noncommercial"> Noncommercial
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="cc-types[]" value="no-derivative"> No Derivative Works
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- License Agreement Section -->
+            <div class="license-section">
+                <div class="license-container">
+                    <label for="license" class="license-label">
+                        I accept the software license<input type="checkbox" id="license" name="license" value="accepted">
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Photo Details & DateTime Section -->
+            <div class="two-columns-container">
+                <!-- Left Column: Rate & Color -->
+                <div class="left-column">
+                    <div class="form-field-vertical">
+                        <label for="rate" class="field-label">Rate this photo:</label>
+                        <input type="number" id="rate" name="rate" min="1" max="5" class="field-number">
+                    </div>
+                    <div class="form-field-vertical">
+                        <label for="color" class="field-label">Color Collection:</label>
+                        <input type="color" id="color" name="color" value="#000000" class="field-color">
+                    </div>
+                </div>
+                
+                <!-- Right Column: Date & Time Box -->
+                <div class="right-column">
+                    <div class="date-time-box">
+                        <div class="form-field-vertical">
+                            <label for="date" class="field-label">Date Taken:</label>
+                            <input type="text" id="date" name="date" placeholder="mm/dd/yyyy" class="field-input">
+                        </div>
+                        <div class="form-field-vertical">
+                            <label for="time" class="field-label">Time Taken:</label>
+                            <input type="text" id="time" name="time" placeholder="--:-- --" class="field-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Buttons Section -->
+            <div class="button-section">
+                <div class="button-container">
+                    <input type="submit" value="送出查询" class="rounded">
+                    <input type="reset" value="Clear Form" class="rounded" style="width: 186px; height: 63px; ">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</main>
+</body>
+</html>
