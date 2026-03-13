@@ -1,0 +1,187 @@
+/* Header, Navigation, Footer */
+header, footer {
+    color: white;
+    background-color: #1A237E;
+    margin: 0em 4em 0em 4em;
+    padding: 1em 0;
+}
+
+header h1 {
+    font-size: 2.5em;
+    padding-left: 1em;
+}
+
+.logo {
+    height: 5em;
+}
+
+header h2 {
+    font-size: 1.8em;
+    padding-left: 1em;
+}
+
+nav {
+    background-color: #3F51B5;
+    margin: 0em 4em 0em 4em;
+    padding: 0.75em 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 1em;
+}
+
+/* Main Content */
+main {
+    margin: 1em 4em;
+    background-color: white;
+    padding: 1em;
+}
+
+/* Headings */
+h2, h3 {
+    color: #1A237E;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.4em;
+    border-bottom: 0.0625em solid #ddd;
+    padding-bottom: 0.25em;
+    padding-left: 0.5em;
+}
+
+/* Images */
+.main-photo {
+    width: 100%;
+}
+
+figcaption {
+    font-style: italic;
+    color: #84936f;
+    background-color: #C5CAE9;
+    padding: 0.5em;
+    margin-top: 0.5em;
+}
+
+/* Options Icons */
+.options {
+    margin: 1em 0;
+    padding-left: 0.5em;
+}
+
+.icon {
+    width: 1.25em;
+    height: 1.25em;
+    margin-left: 0.3125em;
+}
+
+/* Section Headers and Borders */
+#description h3, #related-photos h3, #reviews h3 {
+    background-color: #7986CB;
+    color: white;
+    padding: 0.5em;
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+}
+
+#description, #related-photos, #reviews {
+    border: 0.125em solid #7986CB;
+    margin: 0 -0.5em 1.5em -0.5em;
+    padding: 0 0.5em 0.5em 0.5em;
+}
+
+.related-photos-container {
+    margin: 1em 0;
+}
+
+.related-photo {
+    width: 9.375em;
+    height: 9.375em;
+    margin: 0 0.5em;
+}
+
+/* Reviews */
+.review {
+    margin: 1em 0;
+    padding: 0.5em;
+    background-color: #f9f9f9;
+}
+
+.review-header {
+    margin-bottom: 0.25em;
+}
+
+.comment-icon {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.3125em;
+}
+
+.review-header .review-author {
+    color: #1A237E;
+}
+
+.review-header .review-date {
+    color: #FF80AB;
+}
+
+/* Body and Links */
+body {
+    background-color: #E8EAF6;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #00B0FF;
+    text-decoration: underline;
+}
+
+a:hover {
+    background-color: #F50057;
+    color: white;
+}
+
+.footer-links {
+    margin-bottom: 0.5em;
+    padding-left: 1em;
+}
+
+.separator {
+    color: white;
+    margin: 0 0.1875em;
+}
+
+.copyright, .course-code {
+    margin: 0.25em 0;
+    color: white;
+    padding-left: 1em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header, footer, main, nav {
+        margin: 0.5em 1em;
+    }
+    
+    header h1, header h2, .footer-links, .copyright, .course-code {
+        padding-left: 0.5em;
+    }
+    
+    .related-photo {
+        width: 6.25em;
+        height: 6.25em;
+        margin: 0.25em;
+    }
+}
