@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CISC3003 Practice 08 - Art Filters</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Merriweather" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body class="tiled">
+    <header>
+        <h1>Art Filters</h1>
+    </header>
+    <main>
+        <div id="sliderBox">
+            <form>
+                <p><label>Opacity: </label><input type="range" id="sliderOpacity" min="0" max="100" value="100" class="sliders"> <span id="numOpacity">100</span>%</p>
+                <p><label>Saturation: </label><input type="range" id="sliderSaturation" min="1" max="300" value="100" class="sliders"> <span id="numSaturation">100</span>%</p>
+                <p><label>Brightness: </label><input type="range" id="sliderBrightness" min="0" max="300" value="100" class="sliders"> <span id="numBrightness">100</span>%</p>
+                <p><label>Hue Rotate: </label><input type="range" id="sliderHue" min="0" max="360" value="0" class="sliders"> <span id="numHue">0</span>deg</p>
+                <p><label>Grayscale: </label><input type="range" id="sliderGray" min="0" max="100" value="0" class="sliders"> <span id="numGray">0</span>%</p>
+                <p><label>Blur: </label><input type="range" id="sliderBlur" min="0" max="10" value="0" class="sliders"> <span id="numBlur">0</span>px</p>
+                <p><button id="resetFilters">Reset</button></p>
+            </form>
+        </div>
+
+        <figure id="imgManipulated">
+            <img id="mainImage" src="images/medium/painting1.jpg" alt="Still Life with Flowers in a Glass Vase">
+            <figcaption>
+                <em>Still Life with Flowers in a Glass Vase</em><br>
+                Jan Davidsz. de Heem, 1650 - 1683
+            </figcaption>
+        </figure>
+
+        <div id="thumbBox">
+            <div><img class="thumbnail" src="images/small/painting1.jpg" alt="Still Life with Flowers in a Glass Vase" title="Jan Davidsz. de Heem, 1650 - 1683"></div>
+            <div><img class="thumbnail" src="images/small/painting2.jpg" alt="Portrait of Alida Christina Assink" title="Jan Adam Kruseman, 1833"></div>
+            <div><img class="thumbnail" src="images/small/painting3.jpg" alt="Self-portrait" title="Vincent van Gogh, 1887"></div>
+            <div><img class="thumbnail" src="images/small/painting4.jpg" alt="William II, Prince of Orange, and his Bride, Mary Stuart" title="Anthony van Dyck, 1641"></div>
+            <div><img class="thumbnail" src="images/small/painting5.jpg" alt="Milkmaid" title="Johannes Vermeer, c. 1660"></div>
+        </div>
+    </main>
+
+    <script>
+        $(function() {
+            var $mainImage = $('#mainImage');
+            var $figcaption = $('#imgManipulated figcaption');
+            var $thumbnails = $('.thumbnail');
+
+            var $opacity = $('#sliderOpacity');
+            var $saturation = $('#sliderSaturation');
+            var $brightness = $('#sliderBrightness');
+            var $hue = $('#sliderHue');
+            var $gray = $('#sliderGray');
+            var $blur = $('#sliderBlur');
+
+            var $opacityVal = $('#numOpacity');
+            var $saturationVal = $('#numSaturation');
+            var $brightnessVal = $('#numBrightness');
+            var $hueVal = $('#numHue');
+            var $grayVal = $('#numGray');
+            var $blurVal = $('#numBlur');
+
+            function updateFilters() {
+                var filterStr = 'opacity(' + ($opacity.val() / 100) + ') ' +
+                                'saturate(' + ($saturation.val() / 100) + ') ' +
+                                'brightness(' + ($brightness.val() / 100) + ') ' +
+                                'hue-rotate(' + $hue.val() + 'deg) ' +
+                                'grayscale(' + $gray.val() + '%) ' +
+                                'blur(' + $blur.val() + 'px)';
+                $mainImage.css({
+                    'filter': filterStr,
+                    '-webkit-filter': filterStr
+                });
+            }
+
+            function updateLabels() {
+                $opacityVal.text($opacity.val());
+                $saturationVal.text($saturation.val());
+                $brightnessVal.text($brightness.val());
+                $hueVal.text($hue.val());
+                $grayVal.text($gray.val());
+                $blurVal.text($blur.val());
+            }
+
+            $opacity.add($saturation).add($brightness).add($hue).add($gray).add($blur).on('input', function() {
+                updateLabels();
+                updateFilters();
+            });
+
+            $('#resetFilters').on('click', function(e) {
+                e.preventDefault();
+                $opacity.val(100);
+                $saturation.val(100);
+                $brightness.val(100);
+                $hue.val(0);
+                $gray.val(0);
+                $blur.val(0);
+                updateLabels();
+                updateFilters();
+            });
+
+            $thumbnails.on('click', function() {
+                var smallSrc = $(this).attr('src');
+                var largeSrc = smallSrc.replace('/small/', '/medium/');
+                $mainImage.attr('src', largeSrc);
+                $mainImage.attr('alt', $(this).attr('alt'));
+                $figcaption.html('<em>' + $(this).attr('alt') + '</em><br>' + $(this).attr('title'));
+            });
+
+            updateLabels();
+            updateFilters();
+        });
+    </script>
+</body>
+</html>
