@@ -1,4 +1,20 @@
-:root {	 
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2023 codewithsadee
+ */
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+	/**
+	 * COLORS
+	 */
+	 
 	/* background color */
 	--bg-sinopia: hsl(17, 100%, 44%);
 	--bg-sinopia-alpha-90: hsla(17, 100%, 44%, 0.9);
@@ -97,7 +113,7 @@ img,
 span,
 button,
 ion-icon {
-	display: block;
+	display: black;
 }
 
 a {
@@ -303,7 +319,7 @@ body {
 	left: -270px;
 	width: 100%;
 	max-width: 270px;
-	height: 100vh;
+	height: 100wh;
 	background-color: var(--bg-white);
 	padding: 70px 20px;
 	visibility: hidden;
@@ -340,7 +356,7 @@ body {
 
 .navbar-link {
 	color: var(--text-black);
-	font-size: var(--fontSize-6);
+	font-size: var(--fontsize-6);
 	font-weight: var(--weight-semiBold);
 	padding-block: 12px;
 }
@@ -497,43 +513,6 @@ body {
 	margin-inline-start: 10px;
 }
 
-.menu-actions {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 12px;
-	margin-top: 18px;
-}
-
-.menu-add-btn {
-	background-color: var(--bg-sinopia);
-	color: var(--text-white);
-	border-radius: var(--radius-8);
-	padding: 12px 18px;
-	font-size: var(--fontSize-8);
-	font-weight: var(--weight-semiBold);
-	text-transform: uppercase;
-	letter-spacing: 0.04em;
-	transition: var(--transition-1);
-}
-
-.menu-add-btn:is(:hover, :focus-visible) {
-	background-color: var(--bg-rich-black-fogra-29);
-}
-
-.menu-cart-status {
-	font-size: var(--fontSize-8);
-	color: var(--text-granite-gray);
-}
-
-.menu-cart-live {
-	margin-top: 20px;
-	color: var(--text-sinopia);
-	font-size: var(--fontSize-8);
-	font-weight: var(--weight-semiBold);
-	min-height: 22px;
-}
-
 /*-----------------------------------*\
   #SCHEDULE
 \*-----------------------------------*/
@@ -642,7 +621,7 @@ body {
 
 .footer-input {
 	background-color: var(--bg-white);
-	color: var(--text-black);
+	color: var(--text0-black);
 	box-shadow: var(--shadow);
 	height: 50px;
 	padding-inline: 30px 60px;
@@ -650,10 +629,10 @@ body {
 	font-weight: var(--weight-regular);
 }
 
-.footer-form .form-btn {
+.foorer-form .form-btn {
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
+	transform: translateT(-50%);
 	right: 20px;
 	color: var(--text-sinopia);
 	font-size: 2rem;
@@ -701,7 +680,7 @@ body {
 
 .footer-bottom {
 	padding-block: 20px;
-	border-block-start: 1px solid var(--border-platinum);
+	border-block-start: 1px solid var(--bordr-platinum);
 }
 
 .copyright {
@@ -754,87 +733,6 @@ body {
 
 .back-top-btn:is(:hover, :focus-visible) {
 	background-color: var(--bg-rich-black-fogra-29);
-}
-
-
-/*-----------------------------------*\
-  #AUTH BUTTONS (Login/Register Side by Side)
-\*-----------------------------------*/
-
-.auth-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-/* Login button - Orange border, transparent background */
-.btn-auth-login {
-    flex: 1;
-    text-align: center;
-    padding: 14px 24px;
-    font-size: var(--fontSize-7);
-    font-weight: var(--weight-semiBold);
-    border-radius: var(--radius-8);
-    transition: var(--transition-1);
-    cursor: pointer;
-    text-decoration: none;
-    background-color: transparent;
-    color: var(--text-sinopia);
-    border: 2px solid var(--bg-sinopia);
-}
-
-.btn-auth-login:is(:hover, :focus-visible) {
-    background-color: var(--bg-sinopia);
-    color: var(--text-white);
-    transform: translateY(-2px);
-}
-
-/* Register button - Orange solid background */
-.btn-auth-register {
-    flex: 1;
-    text-align: center;
-    padding: 14px 24px;
-    font-size: var(--fontSize-7);
-    font-weight: var(--weight-semiBold);
-    border-radius: var(--radius-8);
-    transition: var(--transition-1);
-    cursor: pointer;
-    text-decoration: none;
-    background-color: var(--bg-sinopia);
-    color: var(--text-white);
-    border: 2px solid var(--bg-sinopia);
-}
-
-.btn-auth-register:is(:hover, :focus-visible) {
-    background-color: var(--bg-rich-black-fogra-29);
-    border-color: var(--bg-rich-black-fogra-29);
-    transform: translateY(-2px);
-}
-
-/* Logout button specific */
-.btn-logout {
-    background-color: #c62828;
-    border-color: #c62828;
-}
-
-.btn-logout:is(:hover, :focus-visible) {
-    background-color: #b71c1c;
-    border-color: #b71c1c;
-}
-
-/* Responsive for auth buttons */
-@media (max-width: 480px) {
-    .auth-buttons {
-        flex-direction: column;
-        gap: 12px;
-    }
-    
-    .btn-auth-login,
-    .btn-auth-register {
-        width: 100%;
-    }
 }
 
 
@@ -1225,7 +1123,7 @@ body {
    	  	display: none;
    	  }
    	  
-   	  .navbar-item:not(:last-child) {
+   	  .nav-item:not(:last-child) {
    	  	border: none;
    	  }
    	  
@@ -1235,11 +1133,11 @@ body {
    	  	margin-block-end: 0;
    	  }
    	  
-   	  .navbar-link {
+   	  .nav-link {
    	  	transition: var(--transition-1);
    	  }
    	  
-   	  .navbar-link:is(:hover, :focus-visible) {
+   	  .nav-link:is(:hover, :focus-visible) {
    	  	color: var(--text-sinopia);
    	  }
    	  
@@ -1323,34 +1221,7 @@ body {
 	 * SCHEDULE & RESERVATION
 	 */
 	 
-	 :is(.schedule, .reservation) .container {
+	 :is(.schedule .reservation) .container {
 	 	gap: 120px;
 	 }
-}
-
-/* Mobile footer adjustments*/
-@media (max-width: 767px) {
-    .footer-top .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px 10px;
-    }
-    
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
-
-    .footer-list:last-child {
-        grid-column: 1 / -1;
-    }
-    
-    .footer-list-title {
-        font-size: 2.2rem;
-        margin-block-end: 12px;
-    }
-    
-    .footer-link {
-        font-size: 1.4rem;
-        margin-block-start: 8px;
-    }
 }
